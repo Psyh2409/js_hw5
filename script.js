@@ -1,4 +1,4 @@
-// 5 by condition
+// 5.1, 5.2 by condition
 strichkBuffer = () => {
     let strng = "";
     return (smthng) => {
@@ -9,22 +9,22 @@ strichkBuffer = () => {
     };
 }
 let result = strichkBuffer();
-// 5 by example
+// 5.1 by example
 makeBuffer = () => {
-    let obj = {};
-    obj.txt = '';
-    obj.add = (smth) => obj.txt += (smth + (isNaN(smth) ? ' ' : ''));
-    obj.print = () => obj.txt;
-    obj.clear = () => obj.txt = '';
-    return obj;
+    this.txt = '';
+    this.add = (smth) => this.txt += (smth + (isNaN(smth) ? ' ' : ''));
+    this.print = () => this.txt;
+    return this;
 }
+//5.2
+Object.setPrototypeOf(makeBuffer ,clear = () => {this.txt=''})
+//main
 let buffer = makeBuffer();
 buffer.add('JavaScript');
 buffer.add('required');
 buffer.add('learn');
 console.log(buffer.print());
-
-buffer = makeBuffer(); // buffer.clear()
+buffer = makeBuffer(); // alternative of buffer.clear() 
 buffer.add('1');
 buffer.add('0');
 buffer.add('1');
