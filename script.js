@@ -29,6 +29,5 @@ buffer.add('1');
 buffer.add('0');
 buffer.add('1');
 console.log(buffer.print()); // ;)
-
 buffer.clear();
 console.log(buffer.print());
